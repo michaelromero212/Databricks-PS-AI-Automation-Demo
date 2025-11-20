@@ -1,0 +1,23 @@
+{
+    "job_id": "555666",
+    "run_id": "777888",
+    "timestamp": "2024-03-21T14:30:00Z",
+    "tasks": [
+        {
+            "task_name": "ETL_Ingest",
+            "status": "SUCCESS",
+            "duration_seconds": 120
+        },
+        {
+            "task_name": "Transformation_Bronze_to_Silver",
+            "status": "FAILED",
+            "duration_seconds": 450,
+            "error_trace": "org.apache.spark.shuffle.FetchFailedException: Too large frame: 5368709120\n\tat org.apache.spark.storage.ShuffleBlockFetcherIterator.throwFetchFailedException(ShuffleBlockFetcherIterator.scala:554)\n\tat org.apache.spark.storage.ShuffleBlockFetcherIterator.next(ShuffleBlockFetcherIterator.scala:469)\n\t... 32 more\nCaused by: java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:3332)\n\tat java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:124)"
+        }
+    ],
+    "metrics": {
+        "shuffle_read_bytes": 85899345920,
+        "shuffle_write_bytes": 42949672960,
+        "spill_to_disk_bytes": 10737418240
+    }
+}

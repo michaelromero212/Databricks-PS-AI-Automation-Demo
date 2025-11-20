@@ -1,0 +1,31 @@
+{
+  "cluster_id": "0923-123456-abcde789",
+  "timestamp": "2024-03-20T10:00:00Z",
+  "events": [
+    {
+      "time": "2024-03-20T10:00:05Z",
+      "level": "INFO",
+      "message": "Cluster state: PENDING"
+    },
+    {
+      "time": "2024-03-20T10:05:30Z",
+      "level": "WARNING",
+      "message": "Cluster startup is taking longer than expected. Waiting for instances to acquire."
+    },
+    {
+      "time": "2024-03-20T10:12:15Z",
+      "level": "ERROR",
+      "message": "Init script failure: /dbfs/databricks/init/setup_env.sh exited with non-zero status: 127. Command not found: pip3"
+    },
+    {
+      "time": "2024-03-20T10:12:20Z",
+      "level": "INFO",
+      "message": "Cluster state: TERMINATED"
+    },
+    {
+      "time": "2024-03-20T10:12:21Z",
+      "level": "ERROR",
+      "message": "Termination reason: INIT_SCRIPT_FAILURE"
+    }
+  ]
+}
