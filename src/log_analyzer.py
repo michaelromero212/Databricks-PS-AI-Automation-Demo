@@ -37,7 +37,7 @@ class LogAnalyzer:
             print(f"Error loading model: {e}")
             self.pipeline = None
 
-    def analyze_log(self, log_text):
+    def analyze_log(self, log_text, **kwargs):
         """Analyzes the log text using the LLM."""
         if not self.pipeline:
             return {
@@ -74,7 +74,16 @@ FORMAT YOUR RESPONSE AS JSON:
             else:
                 prompt_formatted = prompt
 
-            outputs = self.pipeline(prompt_formatted, max_new_tokens=512, do_sample=True, temperature=0.7)
+            # Use provided parameters or defaults
+            temp = kwargs.get('temperature', 0.7)
+            max_tokens = kwargs.get('max_new_tokens', 512)
+
+            outputs = self.pipeline(
+                prompt_formatted, 
+                max_new_tokens=max_tokens, 
+                do_sample=True, 
+                temperature=temp
+            )
             generated_text = outputs[0]['generated_text']
             
             # Extract JSON part (simple heuristic)
