@@ -10,6 +10,16 @@ This project simulates a consultant's workflow where they encounter complex clus
 3.  **Generate** root cause analysis, remediation steps, and strategic insights.
 4.  **Present** findings in a clean, modern dashboard.
 
+
+## Project Highlights
+
+*   **Tech Stack**: Python, Streamlit, Hugging Face Transformers, PyTorch.
+*   **Architecture**: Local LLM inference (runs offline/privately) integrated with a modern web dashboard.
+*   **Key Skills**: Full-stack AI application development, Prompt Engineering, Log Analysis, UI/UX Design.
+
+> [!NOTE]
+> **Production Considerations**: This project uses lightweight local models (e.g., Qwen2.5-1.5B) to ensure the demo runs on standard hardware without external API costs. In a real-world production environment, this architecture would leverage more powerful models like **DBRX** or **GPT-4** for enhanced accuracy and scale.
+
 ## Project Structure
 
 ```
